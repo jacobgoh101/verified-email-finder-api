@@ -1,18 +1,27 @@
 {
   "name": "verified-email-finder-api",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "wt.js",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "compile": "babel wt.es7.js -o wt.js",
+    "wt": "wt create ./wt.js --name verified-email-finder-api",
+    "start": "yarn run compile && yarn run wt"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-syntax-async-functions": "^6.1.4",
+    "babel-plugin-transform-regenerator": "^6.1.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "dotenv": "^4.0.0",
     "email-permutator": "^1.0.1",
     "email-verify": "^0.1.1",
     "express": "^4.16.2",
-    "helmet": "^3.9.0"
+    "helmet": "^3.9.0",
+    "node-module-concat": "^2.1.0"
   }
 }
